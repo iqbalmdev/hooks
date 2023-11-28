@@ -6,7 +6,7 @@ const ComplexCalculation = () => {
 
   // Expensive calculation function
   const computeExpensiveValue = (a, b) => {
-    // Imagine this is a costly computation
+    // Imagine this is a costly computation when ever the value of the paramter in the function changes it will then executes
     return a * b;
   };
 
