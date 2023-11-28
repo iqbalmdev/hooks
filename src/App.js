@@ -1,28 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
 import { useState,useMemo } from 'react';
+import Router from "./Router/Router"
 function App() {
-
-const [state,setState] = useState(0)
-const [theme,setTheme] = useState('green')
-
-
-const resetReturnedValue = useMemo(()=>{
-  return  doubleTheNumber(state)
-},[state])  
+  
 
   return (
-    <div className="App">
-   <div>hello</div>
-   <input onChange={(e)=>setState(parseInt(e.target.value))}/>
-
-   <div>{state}</div>
-   <label>Returned Value</label>
-
-   <div>{resetReturnedValue}</div>
-
-   <div onClick={()=>setTheme('black')} style={theme==='green' ? {backgroundColor:"green"}:theme==='black' ? {backgroundColor:"black"}:null}>Theme change</div>
-    </div>
+   <>
+   <Router/>
+   </>
   );
 }
 

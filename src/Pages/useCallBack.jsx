@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import ChildComponent from './ChildComponent';
+// import ChildComponent from './ChildComponent';
 
 const ParentComponent = () => {
   const [count, setCount] = useState(0);
@@ -12,7 +12,7 @@ const ParentComponent = () => {
   return (
     <div>
       <p>Count: {count}</p>
-      <ChildComponent onIncrement={incrementCount} />
+      {/* <ChildComponent onIncrement={incrementCount} /> */}
     </div>
   );
 };
