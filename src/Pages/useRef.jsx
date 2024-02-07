@@ -1,12 +1,24 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 
-function MyComponent() {
-  const myRef = useRef(null);
+function TextInputWithFocusButton() {
+  // Create a ref to store the DOM element
+  const inputEl = useRef(null);
+const [state,setState] = useState('')
+  const onButtonClick = () => {
+    // `current` points to the mounted text input element
+    inputEl.current.focus();
+setState(inputEl.current.value)
+  };
+console.log("rendering")
+  return (
+    <>
+      <input ref={inputEl} type="text" />
+      <button onClick={onButtonClick}>Focus the input</button>
 
-  useEffect(() => {
-    // Access and manipulate the DOM element
-    myRef.current.focus();
-  }, []);
 
-  return <input ref={myRef} />;
+      <h1>see the render way {state}</h1>
+    </>
+  );
 }
+
+export default TextInputWithFocusButton
